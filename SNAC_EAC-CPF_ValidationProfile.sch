@@ -17,7 +17,7 @@
     
     <pattern>
         <rule context="*">
-            <assert test="not(@xml:lang)">The XML:LANG attribute is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(@xml:lang)">The XML:LANG attribute is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(@xml:base)">The XML:BASE attribute is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:objectBinWrap)">The OBJECTBINWRAP element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:alternativeSet)">The ALTERNATIVESET element is not supported by the SNAC EAC-CPF profile.</assert>
@@ -74,7 +74,7 @@
             <!--<assert test="cpf:eventDescription">The EVENTDESCRIPTION element in the MAINTENANCEEVENT element is required by the SNAC EAC-CPF profile.</assert>-->
         </rule>
         <rule context="cpf:eventDateTime">
-            <assert test="not(@standardDateTime)">The STANDARDDATETIME attribute on the EVENTDATETIME element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(@standardDateTime)">The STANDARDDATETIME attribute on the EVENTDATETIME element is not supported by the SNAC EAC-CPF profile.</assert>-->
         </rule>
     </pattern>
     
@@ -87,7 +87,7 @@
             <assert test="not(@xlink:arcrole)">The XLINK:ARCROLE attribute on the SOURCE element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@lastDateTimeVerified)">The LASTDATETIMEVERIFIED attribute on the SOURCE element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:sourceEntry)">The SOURCEENTRY element in the SOURCE element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:descriptiveNote)">The DESCRIPTIVENOTE element in the SOURCE element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:descriptiveNote)">The DESCRIPTIVENOTE element in the SOURCE element is not supported by the SNAC EAC-CPF profile.</assert>-->
             
         </rule>
     </pattern>
@@ -102,7 +102,7 @@
         <rule context="cpf:identity">
             <assert test="not(@localType)">The LOCALTYPE attribue on the IDENTITY element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@identityType)">The IDENTITYTYPE attribute on the IDENTITY element is not supported by the SNAC EAC-CPF profile</assert>
-            <assert test="not(cpf:entityId)">The ENTITYID element in the IDENTITY elemet is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:entityId)">The ENTITYID element in the IDENTITY elemet is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(cpf:nameEntryParallel)">The NAMEENTRYPARALLEL element in the IDENTITY element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:descriptiveNote)">The DESCRIPTIVENOTE element in the IDENTITY element is not supported by the SNAC EAC-CPF profile.</assert>
         </rule>
@@ -110,10 +110,10 @@
     
     <pattern>
         <rule context="cpf:nameEntry">
-            <assert test="not(@scriptCode)">The SCRIPTCODE attribute on the NAMEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(@scriptCode)">The SCRIPTCODE attribute on the NAMEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(@transliteration)">The TRANSLITERATION attribute on the NAMEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@localType)">The LOCALTYPE attribute on the NAMEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:useDates)">The USEDATES element in the NAMEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:useDates)">The USEDATES element in the NAMEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(cpf:preferredForm)">The PREFERREDFORM attribute in the NAMEENTRY lement is not supported by the SNAC EAC-CPF profile.</assert>
         </rule>
     </pattern>
@@ -128,23 +128,23 @@
         <rule  context="cpf:description">
             <assert test="not(cpf:places)">The PLACES element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:localDescriptions)">The LOCALDESCRIPTIONS element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:legalStatus)">The LEGALSTATUS element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:legalStatus)">The LEGALSTATUS element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(cpf:legalStatuses)">The LEGALSTATUSES element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:function)">The FUNCTION element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:function)">The FUNCTION element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(cpf:functions)">The FUNCTIONS element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:languagesUsed)">The LANGUAGESUSED element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:occupations)">The OCCUPATIONS element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:mandate)">The MANDATE element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:mandate)">The MANDATE element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(cpf:mandates)">The MANDATES element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:structureOrGenealogy)">The STRUCTUREORGENEALOGY element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:generalContext)">The GENERALCONTEXT element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:structureOrGenealogy)">The STRUCTUREORGENEALOGY element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>-->
+            <!--<assert test="not(cpf:generalContext)">The GENERALCONTEXT element in the DESCRIPTION element is not supported by the SNAC EAC-CPF profile.</assert>-->
         </rule>
     </pattern>
     
     <pattern>
         <rule context="cpf:existDates">
             <assert test="not(@localType)">The LOCALTYPE attribute in the EXISTDATES element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:descriptiveNote)">The DESCRIPTIVENOTE element in the EXISTDATES element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:descriptiveNote)">The DESCRIPTIVENOTE element in the EXISTDATES element is not supported by the SNAC EAC-CPF profile.</assert>-->
         </rule>
     </pattern>
     
@@ -158,13 +158,13 @@
             <assert test="not(cpf:citation)">The CITATION element in the PLACES element is not supported by the SNAC EAC-CPF profile.</assert>
         </rule>
         <rule context="cpf:place">
-            <assert test="not(cpf:placeRole)">The PLACEROLE element in the PLACE element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:placeRole)">The PLACEROLE element in the PLACE element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(cpf:address)">The ADDRESS element in the PLACE element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:dateSingle)">The DATESINGLE element in the PLACE element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:dateRange)">The DATERANGE element in the PLACE element is not xxx</assert>
+            <!--<assert test="not(cpf:dateRange)">The DATERANGE element in the PLACE element is not xxx</assert>-->
             <assert test="not(cpf:dateSet)">The DATESET element in the PLACE element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:citation)">The CITATION element in the PLACE element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:descriptiveNote)">The DESCRIPTIVENOTE element in the PLACE element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:descriptiveNote)">The DESCRIPTIVENOTE element in the PLACE element is not supported by the SNAC EAC-CPF profile.</assert>-->
         </rule>
     </pattern>
     
@@ -274,7 +274,7 @@
             <assert test="not(cpf:dateRange)">The DATERANGE element in the MANDATE element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:dateSet)">The DATESET element in the MANDATE element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:citation)">The CITATION element in the MANDATE element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:descriptiveNote)">The DESCRIPTIVENOTE element in the MANDATE element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:descriptiveNote)">The DESCRIPTIVENOTE element in the MANDATE element is not supported by the SNAC EAC-CPF profile.</assert>-->
         </rule>
     </pattern>
     
@@ -309,7 +309,7 @@
     
     <pattern>
         <rule context="cpf:cpfRelation">
-            <assert test="not(@cpfRelationType)">The CPFRELATIONTYPE attribute on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(@cpfRelationType)">The CPFRELATIONTYPE attribute on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(@lastDateTimeVerified)">The LASTDATETIMEVERIFIED attribute on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="@xlink:arcrole">The XLINK:ARCROLE attribute on the CPFRELATION element is required by the SNAC EAC-CPF profile.</assert>
             <assert test="@xlink:role">The XLINK:ROLE attribute on the CPFRELATION element is required by the SNAC EAC-CPF profile.</assert>
@@ -317,12 +317,12 @@
             <assert test="not(@xlink:actuate)">The XLINK:ACTUATE attribute on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@xlink:show)">The XLINK:SHOW attribute on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:dateSingle)">The DATESINGLE element on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(cpf:dateRange)">The DATERANGE element on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(cpf:dateRange)">The DATERANGE element on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(cpf:dateSet)">The DATESET element on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(cpf:placeEntry)">The PLACEENTRY element on the CPFRELATION element is not supported by the SNAC EAC-CPF profile.</assert>
         </rule>
         <rule context="cpf:resourceRelation">
-            <assert test="not(@resourceRelationType)">The RESOURCERELATIONTYPE attribute on the RESOURCERELATION element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(@resourceRelationType)">The RESOURCERELATIONTYPE attribute on the RESOURCERELATION element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(@lastDateTimeVerified)">The LASTDATETIMEVERIFIED attribute on the RESOURCERELATION element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="@xlink:arcrole">The XLINK:ARCROLE attribute on the RESOURCERELATION element is required by the SNAC EAC-CPF profile.</assert>
             <assert test="@xlink:role">The XLINK:ROLE attribute on the RESOURCERELATION element is required by the SNAC EAC-CPF profile.</assert>
@@ -348,7 +348,7 @@
             <assert test="not(cpf:placeEntry)">The PLACEENTRY element on the FUNCTIONRELATION element is not supported by the SNAC EAC-CPF profile.</assert>
         </rule>
         <rule context="cpf:relationEntry">
-            <assert test="not(@localType)">The LOCALTYPE attribute on the RELATIONENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(@localType)">The LOCALTYPE attribute on the RELATIONENTRY element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(@scriptCode)">The SCRIPTCODE attribute on the RELATIONENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@transliteration)">The TRANSLITERATION attribute on the RELATIONENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
         </rule>
@@ -389,7 +389,7 @@
             <assert test="not(@scriptCode)">The SCRIPTCODE attribute on the TERM element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@transliteration)">The TRANSLITERATION attribute on the TERM element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@lastDateTimeVerified)">The LASTDATETIMEVERIFIED attribute on the TERM element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(@vocabularySource)">The VOCABULARYSOURCE attribute on the TERM element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(@vocabularySource)">The VOCABULARYSOURCE attribute on the TERM element is not supported by the SNAC EAC-CPF profile.</assert>-->
         </rule>
         <rule context="cpf:citation">
             <assert test="not(@xlink:type)">The XLINK:TYPE attribute on the CITATION element is not supported by the SNAC EAC-CPF profile.</assert>
@@ -445,8 +445,8 @@
         <rule context="cpf:placeEntry">
             <assert test="not(@scriptCode)">The SCRIPTCODE attribute on the PLACEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@transliteration)">The TRANSLITERATION attribute on the PLACEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(@localType)">The LOCALTYPE attribute on the PLACEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
-            <assert test="not(@vocabularySource)">The VOCABULARYSOURCE attribute on the PLACEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
+            <!--<assert test="not(@localType)">The LOCALTYPE attribute on the PLACEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>-->
+            <!--<assert test="not(@vocabularySource)">The VOCABULARYSOURCE attribute on the PLACEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>-->
             <assert test="not(@accuracy)">The ACCURACY attribute on the PLACEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@latitude)">The LATTITUDE attribute on the PLACEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
             <assert test="not(@longitude)">The LONGITUDE attribute on the PLACEENTRY element is not supported by the SNAC EAC-CPF profile.</assert>
