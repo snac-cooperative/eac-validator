@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
+	
+	*****************
+	SNAC localization:
+	
+	1. 20121012
+	
+	added the following to the define for <fromDate> and <toDate>
+	
+	<optional>
+						<ref name="a.localType"/>
+	</optional>
+	
+	2. 20121115
+	
+	relax regular expression for <agencyCode> to simply a token (not NMTOKEN; only white space restricted: [\S]+)
+	added type attribute, example values: ISIL (registered); ISIL (compatible); and so on.
+	
+	relax value of <otherAgencyCode> from NMTOKEN to text
+	
+	<preferredForm> changed from NMTOKEN to token: [\S]+ to correspond with <agencyCode>, as it is the agency
+	code value that is intended to be used in <preferredForm>
+	
+	*****I also would like to add <preferredForm> to <nameEntry> not in <parallelEntry>
+	*******************
+	
+	
 	ENCODED ARCHIVAL CONTEXT-CORPORATE BODIES, PERSONS, AND FAMILIES (EAC-CPF) SCHEMA
 	
 	SCHEMA TYPE: Relax NG Schema XML
@@ -219,7 +245,12 @@
 						<optional>
 							<ref name="id"/>
 						</optional>
-						<ref name="m.data.standardRepository"/>
+						<optional>
+							<attribute name="type">
+								<text/>
+							</attribute>
+						</optional>
+						<ref name="m.data.standardRepository"></ref>
 					</element>
 				</optional>
 				<zeroOrMore>
@@ -227,8 +258,7 @@
 						<optional>
 							<ref name="id"/>
 						</optional>
-						<ref name="a.localType"/>
-						<data type="NMTOKEN"/>
+						<ref name="m.id"/>
 					</element>
 				</zeroOrMore>
 				<element a:id="agencyName" name="agencyName">
@@ -451,7 +481,7 @@
 				</oneOrMore>
 			</element>
 		</define>
-		
+
 	</div>
 
 	<div a:documentation="Identity">
@@ -586,10 +616,14 @@
 						<optional>
 							<ref name="id"/>
 						</optional>
-						<data type="NMTOKEN">
-							<!-- NMTOKEN instead of maintenance agency code constraints because the 
-								code may be a non-conforming, i.e. otherAgencyCode -->
+						<data  type="token">	
+							<param name="pattern"
+								>[\S]+</param>
 						</data>
+						<!--data type="NMTOKEN">
+							NMTOKEN instead of maintenance agency code constraints because the 
+								code may be a non-conforming, i.e. otherAgencyCode 
+						</data-->
 					</element>
 				</zeroOrMore>
 			</element>
@@ -617,7 +651,7 @@
 	</div>
 
 	<div a:documentation="Description">
-		
+
 		<define name="e.description">
 			<element a:id="description" name="description">
 				<optional>
@@ -1094,7 +1128,7 @@
 					<text/>
 				</element>
 			</define>
-			
+
 		</div>
 
 		<define name="e.structureOrGenealogy">
@@ -1327,11 +1361,11 @@
 				<ref name="m.relationBody"/>
 			</element>
 		</define>
-		
+
 	</div>
 
 	<div a:documentation="alternativeSet">
-		
+
 		<define name="e.alternativeSet">
 			<element a:id="alternativeSet" name="alternativeSet">
 				<optional>
@@ -1385,7 +1419,7 @@
 				</oneOrMore>
 			</element>
 		</define>
-		
+
 	</div>
 
 	<div a:documentation="Shared">
@@ -1503,6 +1537,9 @@
 							<optional>
 								<ref name="lang"/>
 							</optional>
+							<optional>
+								<ref name="a.localType"/>
+							</optional>
 							<ref name="m.dateSingle"/>
 						</element>
 					</optional>
@@ -1513,6 +1550,9 @@
 							</optional>
 							<optional>
 								<ref name="lang"/>
+							</optional>
+							<optional>
+								<ref name="a.localType"/>
 							</optional>
 							<ref name="m.dateSingle"/>
 						</element>
@@ -1600,7 +1640,7 @@
 					<data type="NMTOKEN"/>
 				</attribute>
 			</define>
-			
+
 			<define name="m.entryLanguageAttributes">
 				<optional>
 					<ref name="a.scriptCode"/>
@@ -1612,20 +1652,26 @@
 					<ref name="a.transliteration"/>
 				</optional>
 			</define>
-
 		</div>
 
-			<define name="m.data.standardRepository">
-				<data type="token">
-					<a:documentation>This pattern represents the character pattern requirements of ISIL (ISO
+		<define name="m.data.standardRepository">
+			<data  type="token">	
+				<param name="pattern"
+						>[\S]+</param>
+				</data>
+			
+			<!-- 
+			<a:documentation>This pattern represents the character pattern requirements of ISIL (ISO
 						15511). Values that conform to the pattern are not, strictly speaking, conformant to ISIL, as
 						all repository codes must be registered with a national authority and the national authority
 						must be registered wth the official ISIL registering authority, the Royal Library of Belgium
 						(http://biblstandard.dk/isil/).</a:documentation>
-					<param name="pattern"
-						>(([A-Z]{2})|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})</param>
-				</data>
-			</define>
+						
+						This modifies the release pattern to correct length maximum of 16 logic
+			
+				<param name="pattern">([A-Z]{2}-[a-zA-Z0-9:/\-]{1,13})|([a-zA-Z]{1}-[a-zA-Z0-9:/\-]{1,14})|([a-zA-Z]{3}-[a-zA-Z0-9:/\-]{1,12})|([a-zA-Z]{4}-[a-zA-Z0-9:/\-]{1,11})</param>
+			-->
+		</define>
 
 		<define name="e.term">
 			<element a:id="term" name="term">
@@ -1962,7 +2008,7 @@
 					</choice>
 				</attribute>
 			</define>
-			
+
 		</div>
 
 	</div>
