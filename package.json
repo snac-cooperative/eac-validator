@@ -4,7 +4,7 @@
     "description": "SNAC EAC-CPF validation assets, including Relax-NG and Schematron files.",
     "homepage": "http://gitlab.iath.virginia.edu/snac/eac-validator",
     "license": "BSD-3-Clause",
-    "contributors": {
+    "contributors": [
         { "name": "Robbie Hott",
           "email": "jh2jf@virginia.edu",
           "url": "http://www.cs.virginia.edu/~jh2jf" },
@@ -14,9 +14,9 @@
         { "name": "Mike Rush",
           "email": "",
           "url": "" }
-    }, 
-    "files" : {
+    ], 
+    "files" : [
         "schematron",
         "rng"
-    }
+    ]
 }
