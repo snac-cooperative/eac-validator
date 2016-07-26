@@ -25,6 +25,11 @@
 	*****I also would like to add <preferredForm> to <nameEntry> not in <parallelEntry>
 	*******************
 	
+	3. 20130120
+	
+	On the second inauguration of Barack Obama, modified <chronItem> to include optional, repeatable <chronItemSet>
+	within which zero or more <placeEntry> may precede at least one though possibly more <event>
+	
 	
 	ENCODED ARCHIVAL CONTEXT-CORPORATE BODIES, PERSONS, AND FAMILIES (EAC-CPF) SCHEMA
 	
@@ -83,8 +88,7 @@
 	
 -->
 <grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="urn:isbn:1-931666-33-4"
-	xmlns="http://relaxng.org/ns/structure/1.0"
-	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace">
 
 	<!-- 
@@ -250,7 +254,7 @@
 								<text/>
 							</attribute>
 						</optional>
-						<ref name="m.data.standardRepository"></ref>
+						<ref name="m.data.standardRepository"/>
 					</element>
 				</optional>
 				<zeroOrMore>
@@ -616,9 +620,8 @@
 						<optional>
 							<ref name="id"/>
 						</optional>
-						<data  type="token">	
-							<param name="pattern"
-								>[\S]+</param>
+						<data type="token">
+							<param name="pattern">[\S]+</param>
 						</data>
 						<!--data type="NMTOKEN">
 							NMTOKEN instead of maintenance agency code constraints because the 
@@ -1655,11 +1658,10 @@
 		</div>
 
 		<define name="m.data.standardRepository">
-			<data  type="token">	
-				<param name="pattern"
-						>[\S]+</param>
-				</data>
-			
+			<data type="token">
+				<param name="pattern">[\S]+</param>
+			</data>
+
 			<!-- 
 			<a:documentation>This pattern represents the character pattern requirements of ISIL (ISO
 						15511). Values that conform to the pattern are not, strictly speaking, conformant to ISIL, as
@@ -1777,23 +1779,41 @@
 							<ref name="e.dateSingle"/>
 							<ref name="e.dateRange"/>
 						</choice>
-						<optional>
-							<ref name="e.placeEntry"/>
-						</optional>
-						<element a:id="event" name="event">
-							<optional>
-								<ref name="id"/>
-							</optional>
-							<optional>
-								<ref name="lang"/>
-							</optional>
-							<optional>
-								<ref name="a.localType"/>
-							</optional>
-							<text/>
-						</element>
+						<choice>
+							<group>
+								<optional>
+									<ref name="e.placeEntry"/>
+								</optional>
+								<ref name="e.event"/>
+							</group>
+							<oneOrMore>
+								<element name="chronItemSet">
+									<zeroOrMore>
+										<ref name="e.placeEntry"/>
+									</zeroOrMore>
+									<oneOrMore>
+										<ref name="e.event"/>
+									</oneOrMore>
+								</element>
+							</oneOrMore>
+						</choice>
 					</element>
 				</oneOrMore>
+			</element>
+		</define>
+
+		<define name="e.event">
+			<element a:id="event" name="event">
+				<optional>
+					<ref name="id"/>
+				</optional>
+				<optional>
+					<ref name="lang"/>
+				</optional>
+				<optional>
+					<ref name="a.localType"/>
+				</optional>
+				<text/>
 			</element>
 		</define>
 
