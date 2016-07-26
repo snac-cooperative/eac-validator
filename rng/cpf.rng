@@ -30,6 +30,10 @@
 	On the second inauguration of Barack Obama, modified <chronItem> to include optional, repeatable <chronItemSet>
 	within which zero or more <placeEntry> may precede at least one though possibly more <event>
 	
+	4. 20130514
+	
+	Changed the datatype of <recordId> from NMTOKEN to <text/> to accommodate ARK identifier
+	
 	
 	ENCODED ARCHIVAL CONTEXT-CORPORATE BODIES, PERSONS, AND FAMILIES (EAC-CPF) SCHEMA
 	
@@ -184,7 +188,7 @@
 					<optional>
 						<ref name="id"/>
 					</optional>
-					<data type="NMTOKEN"/>
+					<text/>
 				</element>
 				<zeroOrMore>
 					<element a:id="otherRecordId" name="otherRecordId">
