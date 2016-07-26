@@ -22,18 +22,20 @@
 	<preferredForm> changed from NMTOKEN to token: [\S]+ to correspond with <agencyCode>, as it is the agency
 	code value that is intended to be used in <preferredForm>
 	
-	*****I also would like to add <preferredForm> to <nameEntry> not in <parallelEntry>
-	*******************
 	
 	3. 20130120
 	
-	On the second inauguration of Barack Obama, modified <chronItem> to include optional, repeatable <chronItemSet>
+	Modified <chronItem> to include optional, repeatable <chronItemSet>
 	within which zero or more <placeEntry> may precede at least one though possibly more <event>
 	
 	4. 20130514
 	
 	Changed the datatype of <recordId> from NMTOKEN to <text/> to accommodate ARK identifier
 	
+	5. 20130911
+	
+	Added <dateSet> to <chronItem>
+	*****************
 	
 	ENCODED ARCHIVAL CONTEXT-CORPORATE BODIES, PERSONS, AND FAMILIES (EAC-CPF) SCHEMA
 	
@@ -1782,6 +1784,7 @@
 						<choice>
 							<ref name="e.dateSingle"/>
 							<ref name="e.dateRange"/>
+							<ref name="e.dateSet"></ref>
 						</choice>
 						<choice>
 							<group>
