@@ -35,6 +35,11 @@
 	5. 20130911
 	
 	Added <dateSet> to <chronItem>
+	
+	6. 20140319
+	
+	Added local attribute snac:preferenceScore to <nameEntry>
+	
 	*****************
 	
 	ENCODED ARCHIVAL CONTEXT-CORPORATE BODIES, PERSONS, AND FAMILIES (EAC-CPF) SCHEMA
@@ -95,7 +100,8 @@
 -->
 <grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="urn:isbn:1-931666-33-4"
 	xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:snac="http://socialarchive.iath.virginia.edu/">
 
 	<!-- 
  
@@ -547,6 +553,7 @@
 							<optional>
 								<ref name="a.localType"/>
 							</optional>
+							<ref name="a.snacPreferenceScore"/>
 							<oneOrMore>
 								<ref name="e.part"/>
 							</oneOrMore>
@@ -618,6 +625,7 @@
 				<optional>
 					<ref name="a.localType"/>
 				</optional>
+				<ref name="a.snacPreferenceScore"/>
 				<oneOrMore>
 					<ref name="e.part"/>
 				</oneOrMore>
@@ -636,6 +644,16 @@
 					</element>
 				</zeroOrMore>
 			</element>
+		</define>
+
+		<define name="a.snacPreferenceScore">
+			<optional>
+				<attribute name="snac:preferenceScore">
+					<data type="integer">
+						<param name="pattern">[0-9]{2}</param>
+					</data>
+				</attribute>
+			</optional>
 		</define>
 
 		<define name="m.nameEntryAuthorizedorAlternative">
@@ -1784,7 +1802,7 @@
 						<choice>
 							<ref name="e.dateSingle"/>
 							<ref name="e.dateRange"/>
-							<ref name="e.dateSet"></ref>
+							<ref name="e.dateSet"/>
 						</choice>
 						<choice>
 							<group>
