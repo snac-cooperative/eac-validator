@@ -1,0 +1,16 @@
+{
+    "name": "snac/eac-validator",
+    "description": "EAC Validation Tools for SNAC",
+    "license": "BSD 3-Clause",
+    "authors": [
+        {
+            "name": "Robbie Hott"
+        },
+        { 
+            "name": "Tom Laudeman"
+        },
+        { 
+            "name": "Mike Rush"
+        }
+    ]
+}
